@@ -103,6 +103,6 @@ int main() {
   fiasgn::Factorial(a, result);
 
   cout << *result << endl;
-  
+
   return 0;
 }
