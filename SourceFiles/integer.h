@@ -32,4 +32,7 @@ public:
     // move overloading
     Integer (Integer &&obj);
     Integer & operator= (Integer &&obj);
+
+    // function call operator, like calling a object like fucntion.
+    void operator ()();
 };

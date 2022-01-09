@@ -84,6 +84,26 @@ Integer & Integer::operator= (Integer &&obj) {
     return *this;
 }
 
+void Integer::operator()() {
+    cout << "function call operator called" << endl;
+    cout << *p_int << endl;
+}
+
+// print integer obj in cout.
+std::ostream & operator<< (std::ostream &out, const Integer &obj) {
+    // cout << "custom print" << endl;
+    out << obj.getValue();
+    return out;
+}
+
+// input operator.
+std::istream & operator>> (std::istream &input, Integer &obj) {
+    int x;
+    input >> x;
+    obj.setValue(x);
+    return input;
+}
+
 int main() {
     Integer i1(10);
     cout << i1.getValue() << endl;
@@ -126,6 +146,17 @@ int main() {
 
     ov4 = move(ov1);
     cout << ov4.getValue() << endl;
+
+    ov3.setValue(10);
+
+    // printing Integer object directly.
+    cout << ov4 << ov3 << endl;
+
+    Integer ov5;
+    cin >> ov5;
+    cout << "Input value: " << ov5 << endl;
+
+    ov5();
 
     return 0;
 }
