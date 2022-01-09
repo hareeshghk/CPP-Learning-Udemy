@@ -104,6 +104,14 @@ std::istream & operator>> (std::istream &input, Integer &obj) {
     return input;
 }
 
+// Use when friend line is enabled in Integer class definition.
+// std::istream & operator>> (std::istream &input, Integer &obj) {
+//     int x;
+//     input >> x;
+//     *obj.p_int = x;
+//     return input;
+// }
+
 int main() {
     Integer i1(10);
     cout << i1.getValue() << endl;

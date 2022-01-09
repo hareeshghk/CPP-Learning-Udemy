@@ -35,4 +35,6 @@ public:
 
     // function call operator, like calling a object like fucntion.
     void operator ()();
+
+    // friend std::istream & operator>> (std::istream &input, Integer &obj);
 };
