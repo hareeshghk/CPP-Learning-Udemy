@@ -38,3 +38,5 @@ public:
 
     // friend std::istream & operator>> (std::istream &input, Integer &obj);
 };
+
+std::ostream & operator<< (std::ostream &out, const Integer &obj);

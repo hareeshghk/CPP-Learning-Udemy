@@ -4,14 +4,17 @@
 using namespace std;
 
 Integer::Integer() {
+    cout << "Integer() with address: "  << this << endl;
     p_int = new int(0);
 }
 
 Integer::Integer(const int &value) {
+    cout << "Integer() with address " << this << " , value " << value << endl;
     p_int = new int(value);
 }
 
 Integer::~Integer() {
+    cout << "~Integer() with address " << this << endl;
     delete p_int;
 }
 
@@ -112,59 +115,59 @@ std::istream & operator>> (std::istream &input, Integer &obj) {
 //     return input;
 // }
 
-int main() {
-    Integer i1(10);
-    cout << i1.getValue() << endl;
+// int main() {
+//     Integer i1(10);
+//     cout << i1.getValue() << endl;
 
-    // int *p = new int(5);
-    //
-    // this is shallow copy
-    // int *p1 = p
-    //
-    // Deep copy
-    // int *p2 = new int(*p);
+//     // int *p = new int(5);
+//     //
+//     // this is shallow copy
+//     // int *p1 = p
+//     //
+//     // Deep copy
+//     // int *p2 = new int(*p);
 
-    auto i2 = i1;
+//     auto i2 = i1;
 
-    Integer i3(i1);
+//     Integer i3(i1);
 
-    // const Integer i4(15);
-    // cout << i4.getValue() << endl;
+//     // const Integer i4(15);
+//     // cout << i4.getValue() << endl;
 
-    cout << "starting overload" << endl;
+//     cout << "starting overload" << endl;
 
-    Integer ov1(5), ov2(6);
+//     Integer ov1(5), ov2(6);
     
-    Integer ov3 = ov1 + ov2;
+//     Integer ov3 = ov1 + ov2;
 
-    cout << (++ov3).getValue() << endl;
+//     cout << (++ov3).getValue() << endl;
 
-    cout << (ov3++).getValue() << endl;
+//     cout << (ov3++).getValue() << endl;
 
-    cout << ov3.getValue() << endl;
+//     cout << ov3.getValue() << endl;
 
-    cout << (ov3 == ov1) << endl;
+//     cout << (ov3 == ov1) << endl;
 
-    ov3 = ov1;
+//     ov3 = ov1;
 
-    cout << (ov3 == ov1) << endl;
+//     cout << (ov3 == ov1) << endl;
 
-    auto ov4(move(ov2));
-    cout << ov4.getValue() << endl;
+//     auto ov4(move(ov2));
+//     cout << ov4.getValue() << endl;
 
-    ov4 = move(ov1);
-    cout << ov4.getValue() << endl;
+//     ov4 = move(ov1);
+//     cout << ov4.getValue() << endl;
 
-    ov3.setValue(10);
+//     ov3.setValue(10);
 
-    // printing Integer object directly.
-    cout << ov4 << ov3 << endl;
+//     // printing Integer object directly.
+//     cout << ov4 << ov3 << endl;
 
-    Integer ov5;
-    cin >> ov5;
-    cout << "Input value: " << ov5 << endl;
+//     Integer ov5;
+//     cin >> ov5;
+//     cout << "Input value: " << ov5 << endl;
 
-    ov5();
+//     ov5();
 
-    return 0;
-}
+//     return 0;
+// }
