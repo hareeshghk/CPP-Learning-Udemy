@@ -8,7 +8,7 @@ public:
         m_p = p;
     }
     ~IntPtr() {
-        delete m_p;
+        if (m_p != nullptr) delete m_p;
     }
     Integer *operator->() {
         return m_p; 
@@ -32,5 +32,6 @@ int main() {
     std::cout << (*val) << std::endl;
     *val = 15;
     std::cout << (*val) << std::endl;
+
     return 0;
 }

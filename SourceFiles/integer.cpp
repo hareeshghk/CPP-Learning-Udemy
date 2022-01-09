@@ -15,7 +15,7 @@ Integer::Integer(const int &value) {
 
 Integer::~Integer() {
     cout << "~Integer() with address " << this << endl;
-    delete p_int;
+    if (p_int != nullptr) delete p_int;
 }
 
 int Integer::getValue() const{
@@ -80,7 +80,7 @@ Integer::Integer(Integer &&obj) {
 Integer & Integer::operator= (Integer &&obj) {
     cout << "move operator" << endl;
     if (this != &obj) {
-        delete p_int;
+        if (p_int != nullptr) delete p_int;
         p_int = obj.p_int;
         obj.p_int = nullptr;
     }
