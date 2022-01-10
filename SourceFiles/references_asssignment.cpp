@@ -7,6 +7,11 @@ int main() {
     int &ref_x1 = x ;
     const int &ref_x2 = x ;
 
+    std::cout << &ref_x2 << std::endl;
+    int hareesh = ref_x2;
+    std::cout << &hareesh << std::endl;
+    hareesh = 35;
+
     ref_x1 = 15;
     // ref_x2 = 20;
  
