@@ -3,6 +3,7 @@
 #include "Account.h"
 #include "Savings.h"
 #include "Checking.h"
+#include "Transaction.h"
 
 int main() {
     Savings acc("Bob", 1000, 0.05);
@@ -26,6 +27,14 @@ int main() {
     std::cout << "Current Balance: " << acc2.GetBalance() << std::endl;
     acc2.AccumulateInterest();
     std::cout << "Interest rate: " << acc2.GetInterestRate() << std::endl;
+
+    std::cout << "============" << std::endl;
+
+    Savings t1("hareesh-sa", 120, 0.05f);
+    Transact(&t1);
+
+    Checking t2("hareesh-ch", 120);
+    Transact(&t2);
     
     return 0;
 }
