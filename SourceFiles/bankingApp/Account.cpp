@@ -30,6 +30,7 @@ int Account::GetAccountNo() const {
 }
 
 void Account::AccumulateInterest() {
+    cout << "Account accumulate" << endl;
 }
 
 void Account::Withdraw(float amount) {

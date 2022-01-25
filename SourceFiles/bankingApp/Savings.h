@@ -7,6 +7,6 @@ private:
 public:
     Savings(const std::string &name, const float &balance, const float &rate);
     ~Savings();
-    void AccumulateInterest();
-    float GetInterestRate()const;
+    void AccumulateInterest() override;
+    float GetInterestRate()const override;
 };

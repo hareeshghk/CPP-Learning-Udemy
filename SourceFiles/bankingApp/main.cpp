@@ -35,6 +35,16 @@ int main() {
 
     Checking t2("hareesh-ch", 120);
     Transact(&t2);
+
+    std::cout << "============" << std::endl;
+
+    Savings s("bob", 100, 0.05f);
+
+    // object splicing.
+    Account a = s;
+
+    a.AccumulateInterest();
+    std::cout << a.GetInterestRate() << std::endl;
     
     return 0;
 }
