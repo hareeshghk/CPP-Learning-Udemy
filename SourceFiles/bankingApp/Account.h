@@ -7,7 +7,7 @@ class Account {
     static int s_ANGenerator;
 public:
     Account(const std::string &name, const float &balance);
-    ~Account();
+    virtual ~Account();
     const std::string GetName() const;
     float GetBalance() const;
     int GetAccountNo() const;
