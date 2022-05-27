@@ -1,6 +1,7 @@
 #include <iostream>
 #include <mutex>
 #include <string>
+#include <thread>
 
 using namespace std;
 
@@ -45,8 +46,8 @@ void ThredBar() {
 }
 
 int main() {
-    std::p_thread t1(ThredBar);
-    std::p_thread t2(ThredFoo);
+    thread t1(ThredBar);
+    thread t2(ThredFoo);
     t1.join();
     t2.join();
     return 0;

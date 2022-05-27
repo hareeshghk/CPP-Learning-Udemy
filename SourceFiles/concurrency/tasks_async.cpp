@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <future>
+#include <chrono>
 
 using namespace std;
 
@@ -15,4 +16,9 @@ int main() {
     thread t1(move(task1), 5, 7);
     t1.detach();
     cout << "Sum: " << f1.get() << endl;
+
+    chrono::time_point s = chrono::steady_clock::now();
+    cout << chrono::duration_cast<chrono::milliseconds>(s.time_since_epoch()).count() << endl;
+    cout << chrono::duration_cast<chrono::milliseconds>(s.time_since_epoch()).count() + 10 << endl;
+    return 0;
 }

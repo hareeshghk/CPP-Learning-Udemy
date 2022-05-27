@@ -13,6 +13,14 @@ void Download() {
     }
     cout << "[Downloader] Completed Download"<<endl;
 }
+
+class Tester {
+public:
+    void print(int x) {
+        cout << x << endl;
+    }
+};
+
 int main() {
     cout << "[main]User started an operation" << endl;
     std::thread thDownloader(Download);
@@ -25,6 +33,12 @@ int main() {
         cout << "thDownloader thread is joinalble" << endl;
         thDownloader.join();
     }
-    sleep(10);
+
+    sleep(1);
+
+    Tester tester;
+
+    thread tk = thread(&Tester::print, &tester, 5);
+    tk.join();
     return 0;
 }
